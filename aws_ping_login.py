@@ -36,7 +36,7 @@ def process_login(args):
     saml = execute_login_dialog(args)
 
     role_arn = 'arn:aws:iam::{0}:role/{1}'.format(args.account, args.role)
-    principal_arn = 'arn:aws:iam::{0}:saml-provider/KBSPingFed'.format(args.account, args.saml_provider)
+    principal_arn = 'arn:aws:iam::{0}:saml-provider/{1}'.format(args.account, args.saml_provider)
     session_duration = int(args.session_duration) * 60
 
     sts = boto3.client('sts')
